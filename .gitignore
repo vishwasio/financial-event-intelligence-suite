@@ -1,0 +1,34 @@
+# Maven
+target/
+*.jar
+!.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven-wrapper.properties
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# Compiled class files
+*.class
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment / secrets
+.env
+.env.*
+*.local
+
+# Docker
+docker-compose.override.yml
+
+# VS Code (in case of occasional use)
+.vscode/
