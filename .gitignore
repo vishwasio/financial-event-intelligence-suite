@@ -9,7 +9,7 @@ target/
 *.iws
 *.iml
 *.ipr
-out/
+/out/
 
 # Compiled class files
 *.class
