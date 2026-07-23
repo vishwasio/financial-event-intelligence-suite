@@ -1,4 +1,4 @@
-package io.vishwasio.feis.trafficgenerator.generation;
+package io.vishwasio.feis.trafficgenerator.generation.domain;
 
 import org.junit.jupiter.api.Test;
 
