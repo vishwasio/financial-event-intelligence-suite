@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+  <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} %-5level %logger{36} - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <!--
+      Dedicated evidence logger: every GenerationEvent recorded by
+      LoggingEvidenceRecorder writes here as JSON, separate from
+      ordinary application logs, so it can genuinely serve as
+      evidence for financial-event-intelligence to investigate.
+  -->
+  <appender name="EVIDENCE_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>logs/evidence.log</file>
+    <encoder class="net.logstash.logback.encoder.LogstashEncoder"/>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <fileNamePattern>logs/evidence-%d{yyyy-MM-dd}.log</fileNamePattern>
+      <maxHistory>7</maxHistory>
+    </rollingPolicy>
+  </appender>
+
+  <logger name="evidence" level="INFO" additivity="false">
+    <appender-ref ref="EVIDENCE_FILE"/>
+  </logger>
+
+  <root level="INFO">
+    <appender-ref ref="CONSOLE"/>
+  </root>
+
+</configuration>
