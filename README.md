@@ -47,3 +47,17 @@ production code yet. See project spec for full architecture.
 |---|---|---|
 | `traffic-generator` | Produces deterministic financial evidence | Not started |
 | `financial-event-intelligence` | Investigates evidence, AI-assisted analysis | Not started |
+
+## Local Development
+
+Start local infrastructure (PostgreSQL, Kafka):
+
+    docker compose up -d
+
+Stop it:
+
+    docker compose down
+
+Stop and wipe all data:
+
+    docker compose down -v
